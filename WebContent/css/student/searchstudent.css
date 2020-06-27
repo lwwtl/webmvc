@@ -1,0 +1,26 @@
+#all section{
+	height: 500px;
+}
+
+#all section .tb_style{
+	border: 1px solid black;
+	width: 600px;
+	height: 200px;
+	border-collapse: collapse;
+	position: relative;
+	top: 50px;
+	left: 320px;
+	text-align: center;
+}
+#all section .tb_style th{
+	border: 1px solid black;
+	background: pink;
+}
+
+#all section .tb_style td{
+	border: 1px solid black;
+	background: orange;
+}
+#all section form {
+	background: mediumpurple;
+}

@@ -1,0 +1,54 @@
+body{
+	margin: 0;
+}
+#all{
+	width: 80%;
+
+	margin: auto;
+}
+#all header{
+	height: 150px;
+	background: greenyellow;
+	
+}
+#all nav{
+	height: 30px;
+	background: pink;
+
+}
+#all section{
+	height: 350px;
+	background: mediumpurple;
+}
+#all footer{
+	height: 50px;
+	background: deepskyblue;
+}
+#all section form{
+	background: ghostwhite;
+	width: 50%;
+	text-align: center;
+	position: relative;
+	top: 50px;
+	left: 290px;
+	padding: 20px;
+}
+#all section form input[type=text]{
+	height: 40px;
+	width: 200px;
+	margin-bottom: 10px;
+	border-radius: 25px;
+}
+#all section form input.btnstyle{
+	width: 80px;
+	height: 30px;
+	background: cornflowerblue;
+	border: 1px solid blue;
+	border-radius:18px;
+	font-size: 23px;
+	font-weight: 700;
+	color: white;
+	font-family: "华文仿宋";
+	margin-left: 30px;
+	
+}
