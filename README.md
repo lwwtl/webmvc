@@ -1,5 +1,5 @@
 # webmvc
-##JDBC
+## JDBC
 Java.sql.Connection:负责连接数据库
 Java.sql.Statement:负责执行sql语句
 Java.sql.ResultSet:负责存放查询结果
@@ -18,10 +18,10 @@ rs.close();
 pstmt.close();
 conn.close();
 
-ResultSet是个小表格，游标是在ResultSet中一个可以移动的指针，指向一行数据。初始时指向第一行的前一行，实际上不指向任何数据。Rs.next()可以将游标移到下一行，它的返回值是一个布尔类型，即有数据返回true，没有数据返回false，可以用rs.next()配合while循环来对结果实现遍历。
+**ResultSet是个小表格，游标是在ResultSet中一个可以移动的指针，指向一行数据。初始时指向第一行的前一行，实际上不指向任何数据。Rs.next()可以将游标移到下一行，它的返回值是一个布尔类型，即有数据返回true，没有数据返回false，可以用rs.next()配合while循环来对结果实现遍历。**
 
-PreparedStatement会对sql语句进行预编译，预编译后，会存储在PreparedStatement对象中，等下次再执行这个PreparedStatement对象时，会提高很多效率。
-当客户发送一条SQL语句给服务器后，服务器总是需要校验SQL语句的语法格式是否正确，然后把SQL语句编译成可执行的函数，最后才是执行SQL语句。其中校验语法，和编译所花的时间可能比执行SQL语句花的时间还要多。如果使用预编译功能，那么只对SQL语句进行一次语法校验和编译，所以效率要高。
+**PreparedStatement会对sql语句进行预编译，预编译后，会存储在PreparedStatement对象中，等下次再执行这个PreparedStatement对象时，会提高很多效率。
+当客户发送一条SQL语句给服务器后，服务器总是需要校验SQL语句的语法格式是否正确，然后把SQL语句编译成可执行的函数，最后才是执行SQL语句。其中校验语法，和编译所花的时间可能比执行SQL语句花的时间还要多。如果使用预编译功能，那么只对SQL语句进行一次语法校验和编译，所以效率要高。**
 
 PreparedStatement是Statement的子接口，功能相似。他用”?”代替了需要插入的参数
 CallableStatement是PreparedStatement的子接口，可以同时处理In参数和out参数
@@ -29,7 +29,7 @@ CallableStatement是PreparedStatement的子接口，可以同时处理In参数�
 Connection可以定义是否自动提交，并进行失误的提交或者Rollback回滚（异常回滚）,保证两条sql语句都执行。场景：银行账户转账。
 
 
-##Web开发
+## Web开发
 web开发是B/S（Browser/Server）模式下的一种开发形式。
 
 JSP表达式
@@ -75,17 +75,28 @@ VO：主要用于传输数据，用于向页面返回数据；
 DAO：底层数据传输，访问数据库，操作数据库，一般包含*Mapper.xml
 DTO:DTO(Data Transfer Object 数据传输对象)，有时候我们仅仅需要获得某一个表的几个字段，所以此时可以用DTO存储这几个字段
 
-##Servlet是一种运行在服务器端的java应用程序，生成动态的web页面，是属于客户与服务器响应的中间层。
+## Servlet
+Servlet是一种运行在服务器端的java应用程序，生成动态的web页面，是属于客户与服务器响应的中间层。
 步骤：创建类，继承httpservlet，重写doGet()方法，配置servlet，部署servlet，测试servlet
 Servlet的配置通过web.xml来实现
+```
+  <servlet>
+  		<servlet-name>StudentServlet</servlet-name>
+  		<servlet-class>com.student.servlets.StudentServlets</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+ 	 <servlet-name>StudentServlet</servlet-name>
+ 	 <url-pattern>/studentservlet</url-pattern>
+  </servlet-mapping>
+ ```
 
 常见的Servlet跳转
-
-1、重定向sendRedirect
+**1、重定向sendRedirect
 Response.sendRedirect(“url”)
 2、请求转发，服务器内跳转forward
 地址栏不变，两个页面属于同一次请求，公用request，重新发送一次请求，对数据进行修改
 request.getRequestDispatcher("/student/searchstudent.jsp").forward(request, response);
-当不需要出参数或者跳转到另一个服务器页面时使用重定向
+当不需要出参数或者跳转到另一个服务器页面时使用重定向**
 
 过滤器配置解决乱码问题,适用于Servlet过多的情况下，不用在每个Servlet中进行配置
