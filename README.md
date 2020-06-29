@@ -81,13 +81,13 @@ Servlet是一种运行在服务器端的java应用程序，生成动态的web页
 Servlet的配置通过web.xml来实现  
 ```
   <servlet>
-  		<servlet-name>StudentServlet</servlet-name>
-  		<servlet-class>com.student.servlets.StudentServlets</servlet-class>
+  <servlet-name>StudentServlet</servlet-name>
+  <servlet-class>com.student.servlets.StudentServlets</servlet-class>
   </servlet>
   
   <servlet-mapping>
- 	 <servlet-name>StudentServlet</servlet-name>
- 	 <url-pattern>/studentservlet</url-pattern>
+ 	<servlet-name>StudentServlet</servlet-name>
+ 	<url-pattern>/studentservlet</url-pattern>
   </servlet-mapping>
  ```
 
