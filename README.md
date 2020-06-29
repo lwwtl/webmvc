@@ -87,7 +87,7 @@ Servlet的配置通过web.xml来实现
   
   <servlet-mapping>
  	<servlet-name>StudentServlet</servlet-name>
- 	<url-pattern>/studentservlet</url-pattern>
+ 	<url-pattern>/studentservlet</url-pattern>jsp页面action和这里的url-pattern一致，为com.student.servlets.StudentServlets目录下文件名
   </servlet-mapping>
  ```
 
